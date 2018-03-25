@@ -337,6 +337,7 @@ E:nth-of-type(n)  选择E同类型的同级的  第n个元素
     position: relative;
     border-radius: 15px;
     font-weight: bold;
+    font-size: 0.2rem;
     display: flex;
     justify-content: flex-start;
 }        
@@ -409,7 +410,7 @@ body .recommend{
 }
 .recommend div{
     width: 49.5%;
-    height: 4rem;
+    height: 3.5rem;
     background: #fff;
     margin: 1px 0;
     border: 1px solid #cccccc42;
@@ -422,7 +423,7 @@ body .recommend{
 }
 .recommend img{
     width: 100%;
-    height: 150px;
+    height: 2.3rem;
 }
 .recommend .product_info{
     overflow: hidden;
@@ -431,8 +432,7 @@ body .recommend{
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     word-break: break-word;
-    height: 35px;
-    margin-bottom: 10px;
+    height: 0.7rem;
 }
 
 .footer{
@@ -442,5 +442,8 @@ body .recommend{
     font-family: sans-serif;
     font-weight: bold;
 }
+
+
+
     
 
