@@ -339,12 +339,11 @@ E:nth-of-type(n)  选择E同类型的同级的  第n个元素
     font-weight: bold;
     display: flex;
     justify-content: flex-start;
-    line-height: 23px;
 }        
 .wrap .box{   
     height: 69px;
     width: 100%;
-    -webkit-transform:translateY(0px); /*尽可能做webkit内核的兼容*/
+    -webkit-transform:translateY(0px); 
     transform: translateY(0px);
 }
 .wrap .box div{
