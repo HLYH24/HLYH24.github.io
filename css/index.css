@@ -337,7 +337,6 @@ E:nth-of-type(n)  选择E同类型的同级的  第n个元素
     position: relative;
     border-radius: 15px;
     font-weight: bold;
-    font-size: 0.2rem;
     display: flex;
     justify-content: flex-start;
 }        
@@ -355,6 +354,7 @@ E:nth-of-type(n)  选择E同类型的同级的  第n个元素
 .wrap .box1{
     height: 23px;
     overflow: hidden;  
+    font-size:12px;
 }
 .wrap .box2{
     min-width: 20%;
@@ -412,7 +412,7 @@ body .recommend{
     width: 49.5%;
     height: 3.5rem;
     background: #fff;
-    margin: 1px 0;
+    margin: 3px 0;
     border: 1px solid #cccccc42;
 }
 .recommend div:nth-child(odd){
@@ -433,6 +433,7 @@ body .recommend{
     -webkit-box-orient: vertical;
     word-break: break-word;
     height: 0.7rem;
+    margin-top: 4px;
 }
 
 .footer{
@@ -442,6 +443,9 @@ body .recommend{
     font-family: sans-serif;
     font-weight: bold;
 }
+
+
+
 
 
 
