@@ -403,23 +403,22 @@ E:nth-of-type(n)  选择E同类型的同级的  第n个元素
 }
 
 body .recommend{
-    background: firebrick;
     width: 100%;
     height: 100%;
-    padding: 0% 1%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 .recommend div{
-    width: 49.5%;
+    width: 49%;
     height: 3.5rem;
     background: #fff;
-    margin: 3px 0;
+    margin: 3px 1px;
     border: 1px solid #cccccc42;
 }
 .recommend div:nth-child(odd){
-    float: left;
 }
 .recommend div:nth-child(even){
-    float: right;
 }
 .recommend img{
     width: 100%;
@@ -432,8 +431,12 @@ body .recommend{
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     word-break: break-word;
-    height: 0.7rem;
     margin-top: 4px;
+    font-size: 0.2rem;
+}
+.price{
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .footer{
@@ -443,6 +446,7 @@ body .recommend{
     font-family: sans-serif;
     font-weight: bold;
 }
+
 
 
 
