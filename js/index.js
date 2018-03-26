@@ -245,13 +245,13 @@ var banner=function(){
     /*记录当前定位*/
     var currX = 0;
 
-    banner.addEventListener('touchstart',function(e){
+    parent.addEventListener('touchstart',function(e){
 
         startX = e.touches[0].clientX;
 
     });
 
-    banner.addEventListener('touchmove',function(e){
+    parent.addEventListener('touchmove',function(e){
 
         moveX = e.touches[0].clientX;
 
