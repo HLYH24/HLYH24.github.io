@@ -14,25 +14,25 @@
         load();
 
         infeed();
-      
-};		
-    
+
+};
+
    /*监听滚动事件*/
- 
+
   var search = function(){
 
     // Es6
-   var [search,banner] = [document.querySelector('.jd_header_box'),document.querySelector('.jd_banner')]
+   var [search,banner] = [document.querySelector('.jd_header_box'),document.querySelector('.jd_banner')];
 
    /*距离范围*/
-   var height = banner.offsetHeight; 
+   var height = banner.offsetHeight;
 
-   window.onscroll = function(){	
+   window.onscroll = function(){
       /*当前页面距离*/
      var top = document.documentElement.scrollTop;
-   
+
      var opacity = 0;
-       
+
       if(top > height){
       	// 滚动距离超过轮播图距离，保持不变
       	opacity = 0.85;
@@ -41,24 +41,24 @@
       	//当滚动距离随着离顶部距离变大，透明度变大
         opacity = 0.85*(top/height);
       }
-    
+
       search.style.background = "rgba(216,80,92,"+opacity+")";
   }
-   
+
 };
 
 var banner=function(){
-	
+
     var banner = document.querySelector('.jd_banner');
-    
+
     var width = banner.offsetWidth;
-    
+
     var imageBox=banner.querySelector('ul:first-child');
 
     var pointBox=banner.querySelector('ul:last-child');
 
     var points=pointBox.querySelectorAll('li');
-    
+
    /*添加过渡*/
     var addTransition = function () {
         imageBox.style.webkitTransition = "all .2s";
@@ -74,15 +74,15 @@ var banner=function(){
         imageBox.style.webkitTransform = "translateX("+translateX+"px)";
         imageBox.style.transform = "translateX("+translateX+"px)";
     };
-       
+
 
    // 无缝滚动和无缝滑动 (定时器，过渡，位移)
    var index = 1;
    var timer = setInterval(function(){
            index++;
-           
-   	    addTransition();        
-      
+
+   	    addTransition();
+
         setTranslateX(-index*width);
 
    }, 3000);
@@ -92,18 +92,18 @@ var banner=function(){
          //无缝滚动
           if(index>=9){
           	 index=1;
-        
+
    	     removeTransition();
-     
-         setTranslateX(-index*width);        	 
+
+         setTranslateX(-index*width);
           }
           //无缝滑动
           else if(index<=0){
           	//定位到第八张
-             index=8;  
+             index=8;
             // 清除过渡
             removeTransition();
-            setTranslateX(-index*width);    
+            setTranslateX(-index*width);
           }
          /*index 1-8  索引范围*/
         /*point 0-7 */
@@ -131,7 +131,7 @@ var banner=function(){
     var isMove = false;
 
     banner.addEventListener('touchstart',function(e){
-     
+
         clearInterval(timer);
         // 当前的触摸点 touches
         //记录当前位置
@@ -146,9 +146,9 @@ var banner=function(){
         /*算出当前图片盒子需要定位的位置*/
         /*将要去做定位*/
         var currX = -index*width + distanceX;
-       
+
         removeTransition();
-        
+
         setTranslateX(currX);
 
     });
@@ -184,21 +184,21 @@ var banner=function(){
             /*箱子滚动*/
             index  ++ ;
             /*定位  过渡来做定位的  这样才有动画*/
-          
+
             addTransition();
-          
+
             setTranslateX(-index*width);
         },4000);
     });
-}     
+}
 
-document.documentElement('touch',function (e) {
-    e.stopPropagation()
-})
-   
+    document.documentElement('touch',function (e) {
+        e.stopPropagation()
+    })
+
    // 横向滑动
     var infeed = function(){
-     
+
     var parent = document.querySelector('.product_box_con');
     var banner = document.querySelector('#infeed');
 
@@ -210,14 +210,14 @@ document.documentElement('touch',function (e) {
     //最小的定位区间
     var minPosition = parentWidth-bannerWidth;
 
-   
-      /*滑动区间*/
-      // 最大滑动区间 
-    var maxSwipe = maxPosition + 100; 
-      // 最小滑动区间       
-    var minSwipe = minPosition - 100;         
 
-   
+      /*滑动区间*/
+      // 最大滑动区间
+    var maxSwipe = maxPosition + 100;
+      // 最小滑动区间
+    var minSwipe = minPosition - 100;
+
+
     var addTransition = function () {
         banner.style.webkitTransition = "all .2s";
         banner.style.transition = "all .2s";
@@ -236,7 +236,7 @@ document.documentElement('touch',function (e) {
     var startX = 0;
     var moveX = 0;
     var distanceX = 0;
- 
+
     /*记录当前定位*/
     var currX = 0;
 
@@ -261,7 +261,7 @@ document.documentElement('touch',function (e) {
             /*做定位*/
             setTranslateX(currX + distanceX);
         }
-       
+
     })
 
     /*避免模拟器上的bug问题   事件冒泡机制*/
@@ -269,9 +269,9 @@ document.documentElement('touch',function (e) {
         /*3.在一定的区间内 做定位     定位区间*/
         /*将要定位的位置 大于  最大定位的时候*/
         if((currX + distanceX) > maxPosition){          // 左边吸附回去
-       
+
             currX = maxPosition;
-       
+
             addTransition();
 
             setTranslateX(currX);
@@ -300,7 +300,7 @@ document.documentElement('touch',function (e) {
 
 
 var downTime = function(){
-    
+
     /*需要倒计时的时间*/
     var time = 5 * 60 * 60 ;
     var skTime = document.querySelector('.sk_time');
@@ -308,7 +308,7 @@ var downTime = function(){
     //初始化
     setInterval(timer,1000);
 
-    function timer(){     
+    function timer(){
       	if(time <= 0){
             clearInterval(timer);
             return false;
@@ -330,7 +330,7 @@ var downTime = function(){
     };
     timer();
 
-}	
+}
 
 
    function move(){
@@ -345,45 +345,45 @@ var downTime = function(){
          ];
         var box1 = document.querySelector('.box1');
         var box = document.querySelector('.box');
-         
-        
+
+
         for(let i = 0; i< data.length;i++){
-           box.innerHTML += '<li class="inner">'+data[i].msg+'</li>';
+            box.innerHTML += '<li class="inner">'+data[i].msg+'</li>';
         }
 
         var index = 0;
-        timer = setInterval(() => {   
+        timer = setInterval(() => {
 
            index++;
 
-           box.style.transition = 'all 0.6s';               
+           box.style.transition = 'all 0.6s';
           // 位移
-           box.style.transform = 'translateY('+(-index*box1.offsetHeight)+'px)';                   
+           box.style.transform = 'translateY('+(-index*box1.offsetHeight)+'px)';
         }, 3000);
 
-        box.addEventListener('transitionend',function(){     
+        box.addEventListener('transitionend',function(){
 
              if(index >= 5){
 
                index = 0;
 
-             box.style.transition = 'none';                
+             box.style.transition = 'none';
              // 位移
              box.style.transform='translateY('+(-index*box1.offsetHeight)+'px)';
 
              }
-        });           
+        });
   };
 
   // 图片加载
- function load(){ 
-    
+ function load(){
+
   window.addEventListener('scroll',function(){
-   
+
     var [html,clientH,scrollTop,scrollHeight] = [null,document.documentElement.clientHeight,
         document.documentElement.scrollTop,document.documentElement.scrollHeight]
-        
-     if(clientH + scrollTop + 50 > scrollHeight){
+
+     if(clientH + scrollTop + 250 > scrollHeight && scrollTop + 300 < 2000){
          $.ajax({
            url: "data.json",
            type: "get",
@@ -391,29 +391,29 @@ var downTime = function(){
            data: null,
            cache: false,  // 是否走缓存item
            success: function (data) {
-               data.forEach((item) => {        
+               data.forEach((item) => {
                    html = `<div><img src="images/dafult1-1.png" data-src="${item.img}" class="Img">
                    <p class="product_info">${item.title}</p>
-                       <span>${item.price}</span></div>` 
-                   $('.recommend').append(html)                                                    
-               });                 
-            }      
-           });      
-       } 
+                       <span class="price">${item.price}</span></div>`
+                   $('.recommend').append(html)
+               });
+            }
+           });
+       }
        var parent = document.querySelector('.recommend');
        var Img = parent.querySelectorAll('img');
        //console.log(Img)
-       delayLoad(Img);       
-    });      
-   
- }    
+       delayLoad(Img);
+    });
+
+ }
 
 function delayLoad(imgList) {
 
     // Es6
     let [scrollTop,clientHeight,timer] = [document.documentElement.scrollTop,
                                           document.documentElement.clientHeight,null]
-    
+
     window.addEventListener('scroll',function(){
 
      for (var i = 0; i < imgList.length; i++) {
@@ -428,22 +428,27 @@ function delayLoad(imgList) {
                 imgList[this.index].src = this.src;
                 //img = null;
             }
-          
+
           imgList[i].style.opacity = 1;
-          
+
          }
        }
-    })  
+    })
 }
 
   // 改变窗口重新刷新
- 
-  
+    window.addEventListener("resize",function(){
+
+        window.location.reload();
+
+    },false)
 
 
 
-   
-    
-    
-   
+
+
+
+
+
+
 
