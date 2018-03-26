@@ -345,9 +345,9 @@ var downTime = function(){
          
         
         for(let i = 0; i< data.length;i++){
-            let odiv = document.createElement('div');
-            odiv.innerHTML += '<li class="inner">'+data[i].msg+'</li>';
-            box.appendChild(odiv)
+            let oul = document.createElement('ul');
+            oul.innerHTML += '<li class="inner">'+data[i].msg+'</li>';
+            box.appendChild(oul)
         }
 
         var index = 0;
