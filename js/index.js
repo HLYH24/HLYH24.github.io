@@ -192,6 +192,9 @@ var banner=function(){
     });
 }     
 
+document.documentElement('touch',function (e) {
+    e.stopPropagation()
+})
    
    // 横向滑动
     var infeed = function(){
@@ -380,7 +383,7 @@ var downTime = function(){
     var [html,clientH,scrollTop,scrollHeight] = [null,document.documentElement.clientHeight,
         document.documentElement.scrollTop,document.documentElement.scrollHeight]
         
-     if(clientH + scrollTop + 200 > scrollHeight){
+     if(clientH + scrollTop + 50 > scrollHeight){
          $.ajax({
            url: "data.json",
            type: "get",
