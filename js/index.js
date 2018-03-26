@@ -351,7 +351,6 @@ var banner=function(){
         var box1 = document.querySelector('.box1');
         var box = document.querySelector('.box');
 
-
         for(let i = 0; i< data.length;i++){
             box.innerHTML += '<li class="inner">'+data[i].msg+'</li>';
         }
@@ -385,10 +384,9 @@ var banner=function(){
 
   window.addEventListener('scroll',function(){
 
-    var [html,clientH,scrollTop,scrollHeight] = [null,document.documentElement.clientHeight,
+    var [str,clientH,scrollTop,scrollHeight] = [``,document.documentElement.clientHeight,
         document.documentElement.scrollTop,document.documentElement.scrollHeight]
-
-     if(clientH + scrollTop + 250 > scrollHeight && scrollTop + 300 < 2000){
+     if(clientH + scrollTop + 50 > scrollHeight){
          $.ajax({
            url: "data.json",
            type: "get",
@@ -397,11 +395,11 @@ var banner=function(){
            cache: false,  // 是否走缓存item
            success: function (data) {
                data.forEach((item) => {
-                   html = `<div><img src="images/dafult1-1.png" data-src="${item.img}" class="Img">
+                   str += `<div><img src="images/dafult1-1.png" data-src="${item.img}" class="Img">
                    <p class="product_info">${item.title}</p>
                        <span class="price">${item.price}</span></div>`
-                   $('.recommend').append(html)
                });
+               $('.recommend').append(str)
             }
            });
        }
