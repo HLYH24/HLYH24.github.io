@@ -21,7 +21,7 @@
 };
    var Document = function(){
        document.documentElement.addEventListener('click',(e) => {
-           alert(e.target.value)
+            e.stopPropagation()
       });
    }
    /*监听滚动事件*/
