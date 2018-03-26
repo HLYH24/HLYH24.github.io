@@ -192,9 +192,9 @@ var banner=function(){
     });
 }
 
-    document.documentElement('touch',function (e) {
-        e.stopPropagation()
-    })
+ document.documentElement('touch',(e) => {
+     e.stopPropagation();
+ });
 
    // 横向滑动
     var infeed = function(){
@@ -299,7 +299,7 @@ var banner=function(){
   }
 
 
-var downTime = function(){
+    var downTime = function(){
 
     /*需要倒计时的时间*/
     var time = 5 * 60 * 60 ;
