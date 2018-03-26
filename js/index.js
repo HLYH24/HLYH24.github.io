@@ -387,7 +387,7 @@ var banner=function(){
     var [str,clientH,scrollTop,scrollHeight] = [``,document.documentElement.clientHeight,
         document.documentElement.scrollTop,document.documentElement.scrollHeight]
 
-     if(clientH + scrollTop + 50 > scrollHeight && scrollTop + 300 < 2000){
+     if(clientH + scrollTop + 50 > scrollHeight){
          $.ajax({
            url: "data.json",
            type: "get",
