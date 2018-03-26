@@ -386,7 +386,8 @@ var banner=function(){
 
     var [str,clientH,scrollTop,scrollHeight] = [``,document.documentElement.clientHeight,
         document.documentElement.scrollTop,document.documentElement.scrollHeight]
-     if(clientH + scrollTop + 50 > scrollHeight){
+
+     if(clientH + scrollTop + 50 > scrollHeight && scrollTop + 300 < 2000){
          $.ajax({
            url: "data.json",
            type: "get",
@@ -439,7 +440,6 @@ function delayLoad(imgList) {
     })
 }
 
-  // 改变窗口重新刷新
 
 
 
