@@ -404,6 +404,7 @@ E:nth-of-type(n)  选择E同类型的同级的  第n个元素
 
 body .recommend{
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -430,6 +431,7 @@ body .recommend{
     -webkit-box-orient: vertical;
     word-break: break-word;
     margin-top: 4px;
+    /*font-size: 0.2rem;*/
     font-size: 17px;
 }
 .price{
@@ -444,7 +446,6 @@ body .recommend{
     font-family: sans-serif;
     font-weight: bold;
 }
-
 
 
 
