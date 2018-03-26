@@ -16,10 +16,6 @@
         infeed();
 
         Document();
-    window.addEventListener('scroll',function (ev) {
-          alert(ev.target)
-      })
-
 
 };
    var Document = function(){
