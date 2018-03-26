@@ -86,7 +86,7 @@ body{
 }
 .slider img{
     width: 100%;
-    border-radius:10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
 }
 
 /* 轮播图 */
@@ -338,7 +338,6 @@ E:nth-of-type(n)  选择E同类型的同级的  第n个元素
     font-weight: bold;
     display: flex;
     justify-content: flex-start;
-
 }
 .wrap .box{
     height: 69px;
