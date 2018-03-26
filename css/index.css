@@ -334,7 +334,6 @@ E:nth-of-type(n)  选择E同类型的同级的  第n个元素
     background: #fff;
     margin-top: 3px;
     height: 23px;
-    position: relative;
     border-radius: 15px;
     font-weight: bold;
     display: flex;
