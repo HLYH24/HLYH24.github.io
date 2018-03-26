@@ -442,11 +442,7 @@ function delayLoad(imgList) {
 }
 
   // 改变窗口重新刷新
-    window.addEventListener("resize",function(){
-
-        window.location.reload();
-
-    },false)
+ 
 
 
 
