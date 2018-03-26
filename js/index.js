@@ -21,7 +21,7 @@
 };
    var Document = function(){
        document.documentElement.addEventListener('click',(e) => {
-            e.stopPropagation()
+          e.stopPropagation()
       });
    }
    /*监听滚动事件*/
@@ -388,7 +388,7 @@ var banner=function(){
     var [html,clientH,scrollTop,scrollHeight] = [null,document.documentElement.clientHeight,
         document.documentElement.scrollTop,document.documentElement.scrollHeight]
 
-     if(clientH + scrollTop + 50 > scrollHeight){
+     if(clientH + scrollTop + 250 > scrollHeight && scrollTop + 300 < 2000){
          $.ajax({
            url: "data.json",
            type: "get",
@@ -442,8 +442,6 @@ function delayLoad(imgList) {
 }
 
   // 改变窗口重新刷新
- 
-
 
 
 
