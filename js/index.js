@@ -380,7 +380,7 @@ var downTime = function(){
     var [html,clientH,scrollTop,scrollHeight] = [null,document.documentElement.clientHeight,
         document.documentElement.scrollTop,document.documentElement.scrollHeight]
         
-     if(clientH + scrollTop + 250 > scrollHeight && scrollTop + 300 < 2000){
+     if(clientH + scrollTop + 200 > scrollHeight){
          $.ajax({
            url: "data.json",
            type: "get",
