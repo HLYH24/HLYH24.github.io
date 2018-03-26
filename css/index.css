@@ -339,7 +339,7 @@ E:nth-of-type(n)  选择E同类型的同级的  第n个元素
     font-weight: bold;
     display: flex;
     justify-content: flex-start;
-    line-height: 23px;
+
 }
 .wrap .box{
     height: 69px;
@@ -360,12 +360,13 @@ E:nth-of-type(n)  选择E同类型的同级的  第n个元素
 .wrap .box2{
     min-width: 21%;
     height: 23px;
-    padding-bottom: 5px;
+    margin-top: 3px;
     text-indent: 5px;
 }
 
 .box .inner{
     color: red;
+    line-height: 23px;
 }
 
 /* 推荐 */
