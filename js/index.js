@@ -7,7 +7,7 @@
 
         banner();
 
-        downTime();
+        dowmtime();
 
         move();
 
@@ -15,8 +15,15 @@
 
         infeed();
 
-};
+        Document();
 
+
+};
+   var Document = function(){
+       document.documentElement.addEventListener('click',(e) => {
+           alert(e.target.value)
+      });
+   }
    /*监听滚动事件*/
 
   var search = function(){
@@ -192,12 +199,10 @@ var banner=function(){
     });
 }
 
- document.documentElement('touch',(e) => {
-     e.stopPropagation();
- });
+
 
    // 横向滑动
-    var infeed = function(){
+    function infeed (){
 
     var parent = document.querySelector('.product_box_con');
     var banner = document.querySelector('#infeed');
@@ -296,10 +301,10 @@ var banner=function(){
         distanceX = 0;
     });
 
-  }
+  };
 
 
-    var downTime = function(){
+    function dowmtime (){
 
     /*需要倒计时的时间*/
     var time = 5 * 60 * 60 ;
@@ -330,7 +335,7 @@ var banner=function(){
     };
     timer();
 
-}
+};
 
 
    function move(){
