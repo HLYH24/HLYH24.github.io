@@ -30,7 +30,6 @@
     // Es6
    var [search,banner] = [document.querySelector('.jd_header_box'),document.querySelector('.jd_banner')];
 
-   /*距离范围*/
    var height = banner.offsetHeight;
 
    window.onscroll = function(){
@@ -139,7 +138,7 @@ var banner=function(){
     banner.addEventListener('touchstart',function(e){
 
         clearInterval(timer);
-        // 当前的触摸点 touches
+      
         //记录当前位置
         startX = e.touches[0].clientX;
     });
@@ -178,7 +177,7 @@ var banner=function(){
             setTranslateX(-index * width);
         }
 
-        /*重置*/
+        
         startX = 0;
         moveX = 0;
         distanceX = 0;
@@ -259,10 +258,10 @@ var banner=function(){
          /*.在一定的区间范围内  滑动  通过控制  滑动定位的区间的实现*/
         /*我们将要去做定位的位置 要在  滑动区间范围内*/
         if((currX + distanceX) < maxSwipe && (currX + distanceX) > minSwipe){
-            /*删除过渡*/
+           
            console.log(currX)
             removeTransition();
-            /*做定位*/
+          
             setTranslateX(currX + distanceX);
         }
 
@@ -309,7 +308,7 @@ var banner=function(){
     var time = 5 * 60 * 60 ;
     var skTime = document.querySelector('.sk_time');
     var spans = skTime.querySelectorAll('span');
-    //初始化
+   
     setInterval(timer,1000);
 
     function timer(){
